@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 from sys import argv
 
 def infinite_add(args):
@@ -8,6 +9,10 @@ def infinite_add(args):
     return result
 
 if __name__ == "__main__":
+    """Print the addition of all arguments."""
     args = argv[1:]
+
     result = infinite_add(args)
-    print(result)
+
+    print("The sum of the arguments is:", result)
+
