@@ -11,3 +11,5 @@ elif int(last_digit == 0):
     print("{} {} is {} and is 0".format(text, number, last_digit))
 elif int(last_digit) < 6 and last_digit != '0':
     print("{} {} is {} {}".format(text, number, last_digit, text2))
+else:
+    print("Wrong Type")
