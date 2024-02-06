@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Module to write a string to a text file and return the number of characters written."""
+"""Module to write a string to a text file return the number of charactes.
+"""
 
 
 def write_file(filename="", text=""):
-    """Write a string to a text file and return the number of characters written.
+    """Write a string to a text file return the number of characters written.
 
     Args:
         filename (str): The name of the text file to write to.
