@@ -19,4 +19,3 @@ def append_write(filename="", text=""):
 
 if __name__ == "__main__":
     print(append_write())
-
