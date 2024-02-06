@@ -1,11 +1,19 @@
 #!/usr/bin/python3
+"""Module to read a text file and print its contents to stdout."""
+
+
 def read_file(filename=""):
-    """
-    Reads the content of a text file .
+    """Read the contents of a text file and print to stdout.
 
     Args:
-        filename : The name of the file to read. Default is an empty string.
+        filename (str): The name of the text file to read.
 
+    Returns:
+        None
     """
-    with open(filename, 'r', encoding='utf-8') as file:
+    with open(filename, mode='r', encoding='utf-8') as file:
         print(file.read(), end='')
+
+
+if __name__ == "__main__":
+    read_file()
