@@ -1,17 +1,51 @@
 #!/usr/bin/python3
-"""save an object to a text file using JSON representation."""
+"""
+Module to load JSON data from a file.
+"""
+
+import json
 
 
-def save_to_json_file(my_obj, filename):
-    """Save an object to a text file using JSON representation.
+def load_from_json_file(filename):
+    """
+    Loads JSON data from a file.
 
     Args:
-        my_obj: The object to be saved.
-        filename (str): The name of the file to save the object to.
+        filename (str): The name of the JSON file to load data from.
 
     Returns:
-        None
+        object: The Python object parsed from the JSON file.
+
+    Raises:
+        ValueError: If the JSON string doesn't represent an object.
     """
-    import json
-    with open(filename, mode='w', encoding='utf-8') as file:
-        json.dump(my_obj, file)
+    with open(filename, 'r') as file:
+        return json.load(file)
+
+
+if __name__ == "__main__":
+    filename = "my_list.json"
+    my_list = load_from_json_file(filename)
+    print(my_list)
+    print(type(my_list))
+
+    filename = "my_dict.json"
+    my_dict = load_from_json_file(filename)
+    print(my_dict)
+    print(type(my_dict))
+
+    try:
+        filename = "my_set_doesnt_exist.json"
+        my_set = load_from_json_file(filename)
+        print(my_set)
+        print(type(my_set))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        filename = "my_fake.json"
+        my_fake = load_from_json_file(filename)
+        print(my_fake)
+        print(type(my_fake))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
